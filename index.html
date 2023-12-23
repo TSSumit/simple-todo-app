@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo-List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="box">
+            <div class="content" id="heading">
+                <h2 id="header">Todo App</h2>
+            </div>
+            <div class="content" id="inputBox">
+                <input type="text" placeholder="  Task" name="Task" id="inputtask">
+                <!-- <button  onclick=""></button> -->
+                <img src="plus.png"  id="addTask" alt="add your new Todo"  srcset="">
+            </div>
+            <br>
+            <div class="content" id="tasks" >
+                <div class="taskanddelete">
+                    <li class="task"> 1.create a portfolio site </li>
+                    <img class="deleteimg" src="delete.png" alt="">
+                </div>
+            </div>
+            <br>
+            <br>
+            <div id="footer" hidden="false">
+                <div id="taskdata"  >there is 0 task remaining</div>
+                <button id="clearbtn" onclick="" >Clear All</button>
+            </div>
+            <br>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
