@@ -1,0 +1,123 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(to right, #11998e, #38ef7d);;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 27vw;
+    opacity: 10;
+    padding: 12px;
+    display: flex;
+    /* margin-top: 20vh; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+.box{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.40);
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.content{
+    width: 70%;
+}
+#header{
+    text-align: center;
+    font-size: 2.5rem;
+}
+#inputBox{
+    height: 2rem;
+    display: flex;
+    align-items: center;
+}
+#inputtask{
+    height: 100%;
+    width: 80%;
+    padding-left: 1vw;
+    /* margin-right: 3px; */
+    border-radius: 3px 0 0 3px;
+    border: 0px solid rgb(254, 254, 255);
+}
+#addTask{
+    height: 5.7vh;
+    width: 5.7vh;
+    margin: 0px;
+    border-radius: 0 3px 3px 0;
+    background: rgb(255, 255, 255);
+    transition: background-color 1s ease;
+}
+#addTask:hover{
+    background-color: rgb(172, 172, 239);
+}
+#tasks{
+    overflow: auto;
+    margin: 0;
+    display: flex;
+    flex-grow: 1;
+    text-align: start;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+}
+.taskanddelete{
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    margin-top: 7px;
+    /* border: 1px solid black; */
+}
+.task{
+    /* position: relative; */
+    border-radius: 3px 0px 0px 3px;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    display: flex;
+    padding-left: 1.5vw;
+    align-items: center;
+    align-content: space-between;
+    height: 2rem;
+    /* width: 70%; */
+    flex-grow: 1;
+    background-color: rgb(169, 213, 231);
+    /* margin-top: 3px; */
+}
+.deleteimg{
+    /* margin: 3px; */
+    border-radius: 0 3px  3px 0;
+    height: 2rem;
+    width: 2rem;
+}
+#footer{
+    width: 87%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+#taskdata{
+    font-size: 1rem;
+}
+#clearbtn{
+    background: rgb(159, 159, 234);
+    border: 1.5px solid black;
+    border-radius: 2px;
+    transition: background-color 1s ease;
+}
+#clearbtn:hover{
+    background-color: rgb(6, 6, 115);
+    color: aqua;
+}
+
