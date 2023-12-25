@@ -1,26 +1,25 @@
-body{
-    height: 100vh;
-    width: 100vw;
+body {
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    width: 100%;
     box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
-    background: linear-gradient(to right, #11998e, #38ef7d);;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #11998e, #38ef7d);
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
-.container{
-    width: 27vw;
-    opacity: 10;
+
+.container {
+    width: 55vh;
+    opacity: 1; /* Corrected the opacity value (1 instead of 10) */
     padding: 12px;
     display: flex;
-    /* margin-top: 20vh; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border: 2px solid black; */
 }
+
 .box{
     width: 100%;
     background: rgba(255, 255, 255, 0.40);
@@ -31,7 +30,7 @@ body{
     align-items: center;
 }
 .content{
-    width: 70%;
+    width: 73%;
 }
 #header{
     text-align: center;
@@ -56,50 +55,59 @@ body{
     margin: 0px;
     border-radius: 0 3px 3px 0;
     background: rgb(255, 255, 255);
-    transition: background-color 1s ease;
+    transition: background-color 0.5s ease;
 }
 #addTask:hover{
     background-color: rgb(172, 172, 239);
 }
-#tasks{
-    overflow: auto;
+
+#tasks {
+    list-style-type: none;
+    overflow: hidden;
+    overflow-y: auto;
     margin: 0;
     display: flex;
     flex-grow: 1;
     text-align: start;
     flex-direction: column;
-    /* justify-content: space-between; */
-    /* align-items: center; */
+    padding: 0;
+    max-height: 195px; /* Set a maximum height */
 }
-.taskanddelete{
+
+#tasks::-webkit-scrollbar {
+    width: 0em; /* Width of the scrollbar */
+    background-color: #eee; /* Color of the scrollbar track */
+}
+
+.taskanddelete {
     display: flex;
     align-items: center;
-    /* width: 100%; */
     margin-top: 7px;
-    /* border: 1px solid black; */
+    margin-left: 0;
 }
-.task{
-    /* position: relative; */
+
+.task {
+    display: inline-block;
     border-radius: 3px 0px 0px 3px;
-    padding: 0px;
+    padding: 7px 3px 7px 3px;
     margin: 0px;
     list-style: none;
     display: flex;
-    padding-left: 1.5vw;
-    align-items: center;
-    align-content: space-between;
-    height: 2rem;
-    /* width: 70%; */
-    flex-grow: 1;
+    flex-direction: column; /* Set to column */
+    align-items: start; /* Align text to start */
     background-color: rgb(169, 213, 231);
-    /* margin-top: 3px; */
+    width: 200px; /* Set a fixed width */
+    box-sizing: border-box; /* Include padding and border in the width */
+    overflow: hidden; /* Hide overflowing content */
 }
-.deleteimg{
-    /* margin: 3px; */
-    border-radius: 0 3px  3px 0;
+
+
+.deleteimg {
+    border-radius: 0 3px 3px 0;
     height: 2rem;
     width: 2rem;
 }
+
 #footer{
     width: 87%;
     display: flex;
@@ -114,7 +122,7 @@ body{
     background: rgb(159, 159, 234);
     border: 1.5px solid black;
     border-radius: 2px;
-    transition: background-color 1s ease;
+    transition: background-color 0.5s ease;
 }
 #clearbtn:hover{
     background-color: rgb(6, 6, 115);
