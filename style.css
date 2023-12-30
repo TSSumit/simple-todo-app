@@ -1,28 +1,44 @@
+:root{
+    --bg-main: #fff;
+    --bg-primary: #181228;
+    --of-white:#e3e0e0;
+    --of-boarder: #c1bcbc;
+    --primary-color:#0d6efd;
+    --box-boarder: #ededed;
+}
+
 body {
+    /* font-size: 1.2rem; */
     height: 100vh; /* Set the height to 100% of the viewport height */
     width: 100%;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    background: linear-gradient(to right, #11998e, #38ef7d);
+    background-color: var(--of-main);
+    /* background: linear-gradient(to right, #11998e, #38ef7d); */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+label{
+    position: relative;
+}
 .container {
-    width: 55vh;
-    opacity: 1; /* Corrected the opacity value (1 instead of 10) */
-    padding: 12px;
+    width: 30rem;
+    /* opacity: 1; Corrected the opacity value (1 instead of 10) */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background: rgb(232, 195, 195); */
+    border: 1px solid var(--of-boarder);
+    padding: 1.2rem;
+    border-radius: 1rem;
 }
 
 .box{
     width: 100%;
-    background: rgba(255, 255, 255, 0.40);
     transform-style: preserve-3d;
     display: flex;
     justify-content: space-between;
@@ -30,12 +46,100 @@ body {
     align-items: center;
 }
 .content{
-    width: 73%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#heading{
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 #header{
+    color: var(--primary-color);
     text-align: center;
     font-size: 2.5rem;
+    padding-left: 2rem;
 }
+  
+/* checkbox-day/night */
+#checkbox{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+.toggle-wrapper{
+    height: 100%;
+    width: 100%;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+label.toggle-lable{
+    width: 2.5em;
+    height: 1.4em;
+    background: url(day.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    border-radius: 50px;
+    margin: 4px;
+    position: relative;
+    border: 1px solid var(--of-boarder);
+    transition: all 0.3s ease;
+    transform-origin: 20% center;
+    cursor: pointer;
+}
+.checkcross{
+    position: inherit;
+    display: inline-block;
+}
+.checkcross .check{
+    position: absolute;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    background: url(sun.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s ease;
+    top:1.4px;
+    left: 1.2px;
+}
+.checkcross .check::before,
+.checkcross .check::after{
+    position:absolute;
+    content: '';
+    height: 4px;
+    border-radius: 10px;
+    background: var(--of-white);
+    transition: 0.5s ease;
+}
+#checkbox:checked + label .check{
+    left: 20px;
+    transform: rotate(360deg);
+    background: url(moon.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#checkbox:checked + label.toggle-lable{
+    background: url(night.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #000000;
+}
+
 #inputBox{
     height: 2rem;
     display: flex;
@@ -43,29 +147,32 @@ body {
 }
 #inputtask{
     height: 100%;
-    width: 80%;
+    width: 20em;
     padding-left: 1vw;
-    /* margin-right: 3px; */
+    background: var(--bg-main);
+    
     border-radius: 3px 0 0 3px;
-    border: 0px solid rgb(254, 254, 255);
+    border: 1px solid var(--of-boarder);
 }
 #addTask{
-    height: 5.7vh;
-    width: 5.7vh;
+    height: 2.21em;
+    width: 2.21em;
     margin: 0px;
+    /* border: 1px solid var(--of-boarder); */
     border-radius: 0 3px 3px 0;
-    background: rgb(255, 255, 255);
+    background: var(--of-boarder);
     transition: background-color 0.5s ease;
 }
 #addTask:hover{
-    background-color: rgb(172, 172, 239);
+    background-color: var(--of-main);
 }
 
 #tasks {
+    width: 19.19em;
     list-style-type: none;
     overflow: hidden;
     overflow-y: auto;
-    margin: 0;
+    margin-left: 10pxs;
     display: flex;
     flex-grow: 1;
     text-align: start;
@@ -76,27 +183,39 @@ body {
 
 #tasks::-webkit-scrollbar {
     width: 0em; /* Width of the scrollbar */
-    background-color: #eee; /* Color of the scrollbar track */
+    background-color: var(--of-main); /* Color of the scrollbar track */
 }
 
 .taskanddelete {
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
-    margin-top: 7px;
-    margin-left: 0;
+    margin-bottom: 7px;
+    /* border-radius: 0 3px 3px 0; */
+    /* background-color: var(--bg-main); */
+
+    
+    transition: background-color 0.5s ease;
+}
+.taskanddelete:hover{
+    background-color: var(--of-main);
 }
 
 .task {
+    height: 2.3rem;
+    width: 90%;
     display: inline-block;
     border-radius: 3px 0px 0px 3px;
-    padding: 7px 3px 7px 3px;
+    padding-left: 0.7em;
     margin: 0px;
     list-style: none;
     display: flex;
     flex-direction: column; /* Set to column */
     align-items: start; /* Align text to start */
-    background-color: rgb(169, 213, 231);
-    width: 200px; /* Set a fixed width */
+    background-color: var(--bg-main);
+    border: 1.2px solid var(--of-boarder);
+    justify-content: center;
     box-sizing: border-box; /* Include padding and border in the width */
     overflow: hidden; /* Hide overflowing content */
 }
@@ -104,8 +223,9 @@ body {
 
 .deleteimg {
     border-radius: 0 3px 3px 0;
-    height: 2rem;
-    width: 2rem;
+    height: 2.21em;
+    width: 2.21em;
+    border: 1.2px solid var(--of-boarder);
 }
 
 #footer{
@@ -119,13 +239,15 @@ body {
     font-size: 1rem;
 }
 #clearbtn{
-    background: rgb(159, 159, 234);
-    border: 1.5px solid black;
-    border-radius: 2px;
+    padding: 4px 10px 4px 10px;
+    background: var(--bg-main);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
     transition: background-color 0.5s ease;
 }
 #clearbtn:hover{
-    background-color: rgb(6, 6, 115);
-    color: aqua;
+    background-color: var(--primary-color);
+    color: var(--bg-main);
 }
 
