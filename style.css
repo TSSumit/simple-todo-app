@@ -1,16 +1,23 @@
 :root{
-    --bg-main: #fff;
-    --bg-primary: #181228;
-    --of-white:#e3e0e0;
-    --of-boarder: #c1bcbc;
-    --primary-color:#0d6efd;
-    --box-boarder: #ededed;
+    --background-color: #fff;
+    --black-background: #181228;
+    --dbackground-color:#e3e0e0;
+    --white-boarder: #c1bcbc;
+    --blue-primary:#0d6efd;
+    --text-color: #191228;
+    --btext-color: #fff;
 }
+
+.night-mode {
+    --background-color: var(--black-background);
+    --text-color: var(--btext-color);
+}
+  
 
 body {
     /* font-size: 1.2rem; */
-    height: 100vh; /* Set the height to 100% of the viewport height */
-    width: 100%;
+    height: 98vh; /* Set the height to 100% of the viewport height */
+    width: 98vw;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -21,49 +28,6 @@ body {
     justify-content: center;
 }
 
-label{
-    position: relative;
-}
-.container {
-    width: 30rem;
-    /* opacity: 1; Corrected the opacity value (1 instead of 10) */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* background: rgb(232, 195, 195); */
-    border: 1px solid var(--of-boarder);
-    padding: 1.2rem;
-    border-radius: 1rem;
-}
-
-.box{
-    width: 100%;
-    transform-style: preserve-3d;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-}
-.content{
-    width: 95%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#heading{
-    /* border: 2px solid blue; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#header{
-    color: var(--primary-color);
-    text-align: center;
-    font-size: 2.5rem;
-    padding-left: 2rem;
-}
-  
 /* checkbox-day/night */
 #checkbox{
     width: 45px;
@@ -93,7 +57,7 @@ label.toggle-lable{
     border-radius: 50px;
     margin: 4px;
     position: relative;
-    border: 1px solid var(--of-boarder);
+    border: 1px solid var(--white-boarder);
     transition: all 0.3s ease;
     transform-origin: 20% center;
     cursor: pointer;
@@ -121,7 +85,7 @@ label.toggle-lable{
     content: '';
     height: 4px;
     border-radius: 10px;
-    background: var(--of-white);
+    background: var(--dbackground-color);
     transition: 0.5s ease;
 }
 #checkbox:checked + label .check{
@@ -137,8 +101,54 @@ label.toggle-lable{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border: 1px solid #000000;
+    border: 1px solid #ffffff;
+    color: var(--night-text-color);
+    background-color: var(--night-bg-main);
 }
+label{
+    position: relative;
+}
+.container {
+    width: 30rem;
+    /* opacity: 1; Corrected the opacity value (1 instead of 10) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: rgb(232, 195, 195); */
+    border: 1px solid var(--white-boarder);
+    padding: 1.2rem;
+    border-radius: 1rem;
+}
+
+.box{
+    width: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.content{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#heading{
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header{
+    color: var(--blue-primary);
+    text-align: center;
+    font-size: 2.5rem;
+    padding-left: 2rem;
+}
+  
+
 
 #inputBox{
     height: 2rem;
@@ -149,18 +159,18 @@ label.toggle-lable{
     height: 100%;
     width: 20em;
     padding-left: 1vw;
-    background: var(--bg-main);
+    background: var(--background-color);
     
     border-radius: 3px 0 0 3px;
-    border: 1px solid var(--of-boarder);
+    border: 1px solid var(--white-boarder);
 }
 #addTask{
     height: 2.21em;
     width: 2.21em;
     margin: 0px;
-    /* border: 1px solid var(--of-boarder); */
+    /* border: 1px solid var(--white-boarder); */
     border-radius: 0 3px 3px 0;
-    background: var(--of-boarder);
+    background: var(--white-boarder);
     transition: background-color 0.5s ease;
 }
 #addTask:hover{
@@ -178,7 +188,7 @@ label.toggle-lable{
     text-align: start;
     flex-direction: column;
     padding: 0;
-    max-height: 195px; /* Set a maximum height */
+    max-height: 150px; /* Set a maximum height */
 }
 
 #tasks::-webkit-scrollbar {
@@ -193,7 +203,7 @@ label.toggle-lable{
     align-items: center;
     margin-bottom: 7px;
     /* border-radius: 0 3px 3px 0; */
-    /* background-color: var(--bg-main); */
+    /* background-color: var(--background-color); */
 
     
     transition: background-color 0.5s ease;
@@ -213,8 +223,8 @@ label.toggle-lable{
     display: flex;
     flex-direction: column; /* Set to column */
     align-items: start; /* Align text to start */
-    background-color: var(--bg-main);
-    border: 1.2px solid var(--of-boarder);
+    background-color: var(--background-color);
+    border: 1.2px solid var(--white-boarder);
     justify-content: center;
     box-sizing: border-box; /* Include padding and border in the width */
     overflow: hidden; /* Hide overflowing content */
@@ -225,7 +235,7 @@ label.toggle-lable{
     border-radius: 0 3px 3px 0;
     height: 2.21em;
     width: 2.21em;
-    border: 1.2px solid var(--of-boarder);
+    border: 1.2px solid var(--white-boarder);
 }
 
 #footer{
@@ -240,14 +250,17 @@ label.toggle-lable{
 }
 #clearbtn{
     padding: 4px 10px 4px 10px;
-    background: var(--bg-main);
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    background: var(--background-color);
+    color: var(--blue-primary);
+    border: 1px solid var(--blue-primary);
     border-radius: 5px;
     transition: background-color 0.5s ease;
 }
 #clearbtn:hover{
-    background-color: var(--primary-color);
-    color: var(--bg-main);
+    background-color: var(--blue-primary);
+    color: var(--background-color);
 }
-
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}

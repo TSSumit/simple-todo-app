@@ -1,3 +1,31 @@
+let isNightMode = false;
+
+let toggleNightMode = () => {
+  isNightMode = !isNightMode;
+  updateStyles();
+  localStorage.setItem('nightMode', isNightMode);
+};
+
+let updateStyles = () => {
+  let root = document.getElementById('html');
+
+  if (isNightMode) {
+    root.classList.add('night-mode');
+  } else {
+    root.classList.remove('night-mode');
+  }
+};
+
+let applyNightModeFromLocalStorage = () => {
+  let nightMode = localStorage.getItem('nightMode');
+  isNightMode = nightMode === 'true';
+  updateStyles();
+};
+
+document.getElementById('checkbox').addEventListener('change', function() {
+    toggleNightMode();
+});
+window.addEventListener('load', applyNightModeFromLocalStorage);
 
 
 let retrievedTask = localStorage.getItem('tasksArray');
@@ -83,3 +111,4 @@ let loadTasksFromLocalStorage=()=>{
     document.getElementById('taskdata').textContent=`You have ${len} pending tasks`;
 }
 window.addEventListener('load', loadTasksFromLocalStorage);
+
