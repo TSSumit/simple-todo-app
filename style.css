@@ -160,7 +160,7 @@ label{
     width: 20em;
     padding-left: 1vw;
     background: var(--background-color);
-    
+    color: var(--text-color);
     border-radius: 3px 0 0 3px;
     border: 1px solid var(--white-boarder);
 }
